@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GeoTetra.Common.Assets
 {
-    [CreateAssetMenu(fileName = "Curve", menuName = "Curve")]
+    [CreateAssetMenu(fileName = "Curve Asset", menuName = "Curve Asset")]
     public class CurveAsset : ScriptableObject
     {
         [SerializeField]
