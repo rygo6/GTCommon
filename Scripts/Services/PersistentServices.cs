@@ -10,21 +10,21 @@ namespace GeoTetra.Common.Services
         [SerializeField]
         private bool _enabled;
 
-        static private PersistentServices _instance;
+        private static PersistentServices _instance;
 
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        static private void Init()
-        {
-            Debug.Log("Initializing Persistent Components.");
-            PersistentServices prefab = Resources.Load<PersistentServices>("PersistentServices");
-            if (prefab._enabled)
-            {
-                GameObject instance = Instantiate(prefab.gameObject);
-                DontDestroyOnLoad(instance);
-            }
-        }
+//        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+//        static private void Init()
+//        {
+//            Debug.Log("Initializing Persistent Components.");
+//            PersistentServices prefab = Resources.Load<PersistentServices>("PersistentServices");
+//            if (prefab._enabled)
+//            {
+//                GameObject instance = Instantiate(prefab.gameObject);
+//                DontDestroyOnLoad(instance);
+//            }
+//        }
 
-        static public T Get<T>() where T : Component
+        public static T Get<T>() where T : Component
         {
             if (null == _instance)
             {
