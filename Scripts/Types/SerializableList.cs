@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GeoTetra.Common.Types
+namespace GeoTetra.GTCommon.Types
 {
     [System.Serializable]
     public class SerializableList<T>

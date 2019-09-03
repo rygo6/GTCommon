@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GeoTetra.Common.Assets
+namespace GeoTetra.GTCommon.Assets
 {
     [CreateAssetMenu(fileName = "Curve Asset", menuName = "Curve Asset")]
     public class CurveAsset : ScriptableObject

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace GeoTetra.Common.Utility
+namespace GeoTetra.GTCommon.Utility
 {
     static public class GameObjectUtility
     {

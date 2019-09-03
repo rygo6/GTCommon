@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace GeoTetra.Common.UnityEvents
+namespace GeoTetra.GTCommon.UnityEvents
 {
     [Serializable]
     public class MeshUnityEvent : UnityEvent<Mesh> {}

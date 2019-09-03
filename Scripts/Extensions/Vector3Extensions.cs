@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace GeoTetra.Common.Extensions
+namespace GeoTetra.GTCommon.Extensions
 {
     public static class Vector3Extensions
     {

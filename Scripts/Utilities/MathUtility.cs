@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GeoTetra.Common.Utility
+namespace GeoTetra.GTCommon.Utility
 {
     public static class MathUtility
     {
