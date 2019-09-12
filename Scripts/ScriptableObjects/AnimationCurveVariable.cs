@@ -3,13 +3,13 @@
 namespace GeoTetra.GTCommon.ScriptableObjects
 {
     [CreateAssetMenu]
-    public class IntVariable : Variable<int>
+    public class AnimationCurveVariable : Variable<AnimationCurve>
     {
         //This must go here because if it goes in the base type as a T it won't be serialized.
         [SerializeField]
-        private int _value;
+        private AnimationCurve _value;
 
-        public override int Value
+        public override AnimationCurve Value
         {
             get => _value;
             set => _value = value;

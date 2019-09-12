@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace GeoTetra.GTCommon.Variables
+namespace GeoTetra.GTCommon.ScriptableObjects
 {
     [Serializable]
     public class FloatReference : Reference<float>

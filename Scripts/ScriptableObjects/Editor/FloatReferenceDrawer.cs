@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace GeoTetra.GTCommon.Variables
+namespace GeoTetra.GTCommon.ScriptableObjects
 {
     [CustomPropertyDrawer(typeof(FloatReference))]
     public class FloatReferenceDrawer : VariableReferenceDrawer

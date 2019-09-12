@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GeoTetra.GTCommon.Variables
+namespace GeoTetra.GTCommon.ScriptableObjects
 {
     public abstract class Variable<T> : ScriptableObject
     {

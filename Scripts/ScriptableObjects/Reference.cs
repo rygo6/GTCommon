@@ -2,7 +2,7 @@
 using System.Reflection.Emit;
 using UnityEngine;
 
-namespace GeoTetra.GTCommon.Variables
+namespace GeoTetra.GTCommon.ScriptableObjects
 {
     [Serializable]
     public abstract class Reference<T> 

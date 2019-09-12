@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace GeoTetra.GTCommon.Variables
+namespace GeoTetra.GTCommon.ScriptableObjects
 {
     public abstract class VariableReferenceDrawer : PropertyDrawer
     {
@@ -40,8 +40,6 @@ namespace GeoTetra.GTCommon.Variables
 
             useConstant.boolValue = result == 0;
 
-            Debug.Log(constantValue);
-            
             EditorGUI.PropertyField(position, 
                 useConstant.boolValue ? constantValue : variable, 
                 GUIContent.none);

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GeoTetra.GTCommon.Variables
+namespace GeoTetra.GTCommon.ScriptableObjects
 {
     [CreateAssetMenu]
     public class FloatVariable : Variable<float>

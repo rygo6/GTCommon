@@ -4,11 +4,11 @@ using UnityEngine;
 namespace GeoTetra.GTCommon.ScriptableObjects
 {
     [Serializable]
-    public class IntReference : Reference<int>
+    public class AnimationCurveReference : Reference<AnimationCurve>
     {
         //This must go here because if it goes in the base type as a Variable<T> it won't be serialized.
-        [SerializeField] private IntVariable _variable;
+        [SerializeField] private AnimationCurveVariable _variable;
 
-        protected override Variable<int> Variable => _variable;
+        protected override Variable<AnimationCurve> Variable => _variable;
     }
 }

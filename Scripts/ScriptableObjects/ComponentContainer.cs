@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace GeoTetra.GTCommon.Variables
+namespace GeoTetra.GTCommon.ScriptableObjects
 {
     [CreateAssetMenu]
     public class ComponentContainer : ScriptableObject
@@ -23,6 +23,11 @@ namespace GeoTetra.GTCommon.Variables
         
         private Dictionary<Type, Component> _componentDictionary = new Dictionary<Type, Component>();
 
+        public void Populate<T>(out T reference) where T : Component
+        {
+            reference = Get<T>();
+        }
+        
         public T Get<T>() where T : Component
         {
             _componentDictionary.TryGetValue(typeof(T), out Component component);
