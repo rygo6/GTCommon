@@ -42,7 +42,7 @@ namespace GeoTetra.GTCommon.Attributes
             {
                 sceneAsset = AssetDatabase.LoadAssetAtPath(property.stringValue, typeof(SceneAsset)) as SceneAsset;
             }
-            SceneAsset newScene = EditorGUI.ObjectField(position, "Scene:", sceneAsset, typeof(SceneAsset), false) as SceneAsset;
+            SceneAsset newScene = EditorGUI.ObjectField(position, property.displayName, sceneAsset, typeof(SceneAsset), false) as SceneAsset;
             property.stringValue = null == newScene ? string.Empty : AssetDatabase.GetAssetPath(newScene);
         }
         

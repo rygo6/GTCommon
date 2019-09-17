@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using Partak;
+﻿using System.Collections.Generic;
 using UnityEngine;
-
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
 namespace GeoTetra.GTCommon.ScriptableObjects
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Partak/ComponentContainer")]
     public class ComponentContainer : ScriptableObject
     {
 #if UNITY_EDITOR
@@ -17,11 +14,22 @@ namespace GeoTetra.GTCommon.ScriptableObjects
         [SerializeField]
         private string _developerDescription = "";
 #endif
-
-        [SerializeField]
-        private List<Component> _components = new List<Component>(); //make not editable
         
-        private Dictionary<Type, Component> _componentDictionary = new Dictionary<Type, Component>();
+        [SerializeField]
+        private List<Component> _components = new List<Component>(); //make not editable, for debugging, or read dict in editor class
+        
+        private readonly Dictionary<System.Type, Component> _componentDictionary = new Dictionary<System.Type, Component>();
+
+        private void Awake()
+        {
+            Debug.Log("Awake");
+        }
+
+        private void OnValidate()
+        {
+            Debug.Log("Validate");
+            _componentDictionary.Clear();
+        }
 
         public void Populate<T>(out T reference) where T : Component
         {
@@ -39,19 +47,11 @@ namespace GeoTetra.GTCommon.ScriptableObjects
             _componentDictionary.Add(component.GetType(), component);
             _components.Add(component);
         }
-        
+
         public void UnregisterComponent(Component component)
         {
             _componentDictionary.Remove(component.GetType());
             _components.Remove(component);
-        }
-        
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        private void Reset()
-        {
-            Debug.Log("Reset");
-            _components.Clear();
-            _componentDictionary.Clear();
         }
     }
 }
