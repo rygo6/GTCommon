@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using GeoTetra.GTCommon.Components;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -46,6 +47,13 @@ namespace GeoTetra.GTCommon.ScriptableObjects
         {
             _componentDictionary.Add(component.GetType(), component);
             _components.Add(component);
+        }
+        
+        public void RegisterComponent(SubscribableBehaviour behaviour)
+        {
+            _componentDictionary.Add(behaviour.GetType(), behaviour);
+            _components.Add(behaviour);
+            behaviour.Destroyed += UnregisterComponent;
         }
 
         public void UnregisterComponent(Component component)
