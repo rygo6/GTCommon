@@ -21,14 +21,8 @@ namespace GeoTetra.GTCommon.ScriptableObjects
         
         private readonly Dictionary<System.Type, Component> _componentDictionary = new Dictionary<System.Type, Component>();
 
-        private void Awake()
-        {
-            Debug.Log("Awake");
-        }
-
         private void OnValidate()
         {
-            Debug.Log("Validate");
             _componentDictionary.Clear();
         }
 
