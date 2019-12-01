@@ -4,19 +4,19 @@ using System.Collections.Generic;
 using GeoTetra.GTCommon.Attributes;
 using GeoTetra.GTCommon.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 
 namespace GeoTetra.GTUI
 {
     public class LoadSceneOnStart : MonoBehaviour
     {
-        [ScenePath]
-        [SerializeField] 
-        private string _scene;
+        [SerializeField] private SceneLoadSystem _sceneLoadSystem;
+        [SerializeField] private AssetReference _sceneReference;
+        
         private void Start()
         {
-            Debug.Log(_scene);
-            SceneManager.LoadSceneAsync(_scene, LoadSceneMode.Additive);
+            _sceneLoadSystem.Load(null, _sceneReference);
         }
     }
 }
