@@ -7,7 +7,7 @@ namespace GeoTetra.GTCommon.ScriptableObjects
 #if UNITY_EDITOR
         [Multiline] 
         [SerializeField]
-        private string _developerDescription = "";
+        private string _developerDescription;
 #endif
 
         public abstract T Value { get; set; }
