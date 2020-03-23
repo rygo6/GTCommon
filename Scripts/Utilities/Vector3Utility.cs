@@ -6,6 +6,18 @@ namespace GeoTetra.GTCommon.Utility
 {
     public static class Vector3Utility
     {
+        public static Vector3 Clamp(Vector3 vector3, float min, float max)
+        {
+            return new Vector3(Mathf.Clamp(vector3.x, min, max), Mathf.Clamp(vector3.y, min, max), Mathf.Clamp(vector3.z, min, max));
+        }
+        
+        public static bool Approximately(Vector3 a, Vector3 b)
+        {
+            return Mathf.Approximately(a.x, b.x) &&
+                   Mathf.Approximately(a.y, b.y) &&
+                   Mathf.Approximately(a.z, b.z);
+        }
+        
         public static float RatioBetweenTwo(Vector3 start, Vector3 end, Vector3 point)
         {
             point = ClosestPointOnLine(start, end, point);
