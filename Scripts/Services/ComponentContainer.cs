@@ -9,7 +9,7 @@ using UnityEditor;
 
 namespace GeoTetra.GTCommon.ScriptableObjects
 {
-    [CreateAssetMenu(menuName = "GeoTetra/Common/ComponentContainer")]
+    [CreateAssetMenu(menuName = "GeoTetra/Services/ComponentContainer")]
     public class ComponentContainer : ScriptableObject
     {
 #if UNITY_EDITOR

@@ -9,5 +9,10 @@ namespace GeoTetra.GTCommon.Extensions
         {
             return Angle * (Point - Pivot) + Pivot;
         }
+
+        public static Vector3 Snap(this Vector3 vector3, float increment)
+        {
+            return new Vector3(vector3.x.Snap(increment), vector3.y.Snap(increment), vector3.z.Snap(increment));
+        }
     }
 }

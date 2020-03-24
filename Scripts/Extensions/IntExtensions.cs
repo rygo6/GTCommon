@@ -1,4 +1,4 @@
-﻿namespace GeoTetra.GTCommon
+﻿namespace GeoTetra.GTCommon.Extensions
 {
     public static class IntExtensions
     {
