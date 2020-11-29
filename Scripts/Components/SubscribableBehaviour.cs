@@ -11,21 +11,22 @@ namespace GeoTetra.GTCommon.Components
     /// </summary>
     public class SubscribableBehaviour : MonoBehaviour
     {
-        public event Action<SubscribableBehaviour> Initialized;
+        public event Action<SubscribableBehaviour> Started;
         
         public event Action<SubscribableBehaviour> Destroyed;
 
+        public Task Starting { get; private set; }
+
         public RectTransform RectTransform => transform as RectTransform;
 
-        protected async void Start()
+        private void Start()
         {
-            await
-            Initialize();
+            Starting = StartAsync();
         }
 
-        protected async virtual Task Initialize()
+        protected virtual async Task StartAsync()
         {
-            Initialized?.Invoke(this);
+            Started?.Invoke(this);
         }
         
         protected virtual void OnDestroy()
