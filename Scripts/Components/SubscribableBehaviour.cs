@@ -24,9 +24,10 @@ namespace GeoTetra.GTCommon.Components
             Starting = StartAsync();
         }
 
-        protected virtual async Task StartAsync()
+        protected virtual Task StartAsync()
         {
             Started?.Invoke(this);
+            return Task.CompletedTask;
         }
         
         protected virtual void OnDestroy()
